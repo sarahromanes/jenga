@@ -1,4 +1,4 @@
-jenga <img src="man/figures/jenga-icon.png" align="right"  height="250" width="250"/>
+jenga <img src="man/figures/jenga-1.png" align="right"  height="250" width="250"/>
 ======================================================
 
 Save .RData files in an efficient jenga stack.
