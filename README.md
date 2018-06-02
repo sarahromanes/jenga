@@ -6,7 +6,7 @@ Save .RData files in an efficient jenga stack.
 Overview
 --------
 
-**multiDA** is a Discriminant Analysis (DA) algorithm capable for use in high dimensional datasets, providing feature selection through multiple hypothesis testing. This algorithm has minimal tuning parameters, is easy to use, and offers improvement in speed compared to existing DA classifiers.
+**jenga** is a Discriminant Analysis (DA) algorithm capable for use in high dimensional datasets, providing feature selection through multiple hypothesis testing. This algorithm has minimal tuning parameters, is easy to use, and offers improvement in speed compared to existing DA classifiers.
 
 
 
@@ -24,15 +24,22 @@ devtools::install_github("sarahromanes/jenga")
 Usage
 -----
 
-The following example trains the multiDA classifier using the SRBCT dataset, and finds the resubstitution error rate. 
+We can initialise a jenga stack as follows:
 
 ```r
-vy   <- SRBCT$vy
-mX   <- SRBCT$mX
-res  <- multiDA(mX, vy, c.pen=2, equal.var=TRUE, set.options="exhaustive")
-vals <- predict(res, newdata=mX)$vy.pred          #vy.pred returns class labels
-rser <- sum(vals!=vy)/length(vy)
+slots    <- c("Sim 1", "Sim 2", "Sim 3")
+my.jenga <- create.stack(slots)
+```
+We can then examine the status of our stack by calling ```status.stack```:
 
+```r
+status.stack(my.jenga)
+```
+
+Returning
+
+```r
+All slots are empty!
 ```
 
 ## Authors
@@ -48,3 +55,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
+
