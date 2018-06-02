@@ -1,4 +1,4 @@
-jenga
+jenga <img src="man/figures/jenga-icon.png" align="right"  height="250" width="250"/>
 ======================================================
 
 Save .RData files in an efficient jenga stack.
@@ -6,7 +6,7 @@ Save .RData files in an efficient jenga stack.
 Overview
 --------
 
-**jenga** is a Discriminant Analysis (DA) algorithm capable for use in high dimensional datasets, providing feature selection through multiple hypothesis testing. This algorithm has minimal tuning parameters, is easy to use, and offers improvement in speed compared to existing DA classifiers.
+**jenga** is a small, easy to use package, which allows users to create a "jenga stack" - that is, a named list to be 
 
 
 
