@@ -36,11 +36,19 @@ We can then examine the status of our stack by calling ```status.stack```:
 status.stack(my.jenga)
 ```
 
-Returning
+Returning:
 
 ```r
 All slots are empty!
 ```
+
+It is easy to update a slot using jenga. Using ```update.stack```, we simultaneously update the jenga stack in the global environment, and by default, save the file to disk with the file name the name of the jenga stack. 
+
+```r
+new.data <- c(1,2,3)
+update.stack(my.jenga, object = new.data, slot = "Sim 1")
+```
+
 
 ## Authors
 

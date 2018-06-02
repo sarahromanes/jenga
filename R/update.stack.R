@@ -8,15 +8,15 @@
 
 
 
-update.stack <- function(stack, object, updatedSlot, save=TRUE){
+update.stack <- function(stack, object, slot, save=TRUE){
 
-  inds <- which(names(stack)==updatedSlot)
+  inds <- which(names(stack)==slot)
 
   nameSlot <- deparse(substitute(stack))
 
 
   if(length(inds)==0){
-    stop(paste("Unknown slot",updatedSlot, "-- not an assigned slot in", nameSlot))
+    stop(paste("Unknown slot",slot, "-- not an assigned slot in", nameSlot))
   }
 
   else{
@@ -24,7 +24,7 @@ update.stack <- function(stack, object, updatedSlot, save=TRUE){
     stack[[inds]] <-  object
     assign(nameSlot, stack, envir=.GlobalEnv)
 
-    cat(paste("Slot",nameSlot,"has been updated for slot", updatedSlot))
+    cat(paste("Slot",nameSlot,"has been updated for slot", slot))
 
   }
 
