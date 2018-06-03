@@ -4,6 +4,7 @@
 #' @param stack2 A jenga stack as created by \code{create.slot}
 #'
 #' @return a merged jenja stack
+#' @export
 
 
 

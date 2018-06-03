@@ -5,6 +5,7 @@
 #' @param updatedSlot a character input, of the slot to be updated. Must match slots already in the stack.
 #' @param SAVE if \code{SAVE=TRUE}, then the updated slot will be saved to disk in an .RData file of the name of the stack.
 #' @return an updated jenja stack
+#' @export
 
 
 

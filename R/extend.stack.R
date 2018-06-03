@@ -3,6 +3,7 @@
 #' @param stack A jenga stack as created by \code{create.slot}
 #' @param extendedSlot a character input, of the name of the new slot to be created.
 #' @return an extended jenja stack
+#' @export
 
 
 

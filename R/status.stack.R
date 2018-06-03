@@ -2,6 +2,7 @@
 #'
 #' @param stack A jenga stack as created by \code{create.slot}
 #' @return print statement on the number of filled and empty slots in your jenga stack
+#' @export
 
 
 status.stack <- function(stack){
@@ -10,10 +11,10 @@ status.stack <- function(stack){
   filled <- names(which(lapply(stack,length)!=0))
 
   if(length(empty)==0){
-    cat(green("All slots are filled!"))
+    cat(crayon::green("All slots are filled!"))
 
   }else if(length(filled)==0){
-    cat(red("All slots are empty!"))
+    cat(crayon::red("All slots are empty!"))
 
   }else{
     cat(crayon::blue(paste("Total of", length(filled), "slots filled out of", length(stack), "total slots\n")))
