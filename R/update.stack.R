@@ -25,7 +25,7 @@ update.stack <- function(stack, object, slot, save=TRUE){
     stack[[inds]] <-  object
     assign(nameSlot, stack, envir=.GlobalEnv)
 
-    cat(paste("Slot",nameSlot,"has been updated for slot", slot))
+    cat(paste("Jenga stack",nameSlot,"has been updated for slot", slot))
 
   }
 
