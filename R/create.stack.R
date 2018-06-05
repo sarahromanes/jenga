@@ -5,7 +5,7 @@
 #' @export
 #' @examples
 #'
-#' my.stack <- create.slot(c("Variable 1", "Variable 2", "Variable 3"))
+#' my.stack <- create.stack(c("Variable 1", "Variable 2", "Variable 3"))
 
 create.stack <- function(slot.names){
 
