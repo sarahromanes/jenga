@@ -4,7 +4,7 @@
 \alias{update.stack}
 \title{Update a slot of your jenga stack}
 \usage{
-\method{update}{stack}(stack, object, slot, save = TRUE)
+update.stack(stack, object, slot, save = TRUE)
 }
 \arguments{
 \item{stack}{A jenga stack as created by \code{create.slot}}

@@ -4,7 +4,7 @@
 \alias{merge.stack}
 \title{Merge your jenga stacks}
 \usage{
-\method{merge}{stack}(stack1, stack2)
+merge.stack(stack1, stack2)
 }
 \arguments{
 \item{stack1}{A jenga stack as created by \code{create.slot}}
