@@ -103,7 +103,7 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>update.stack</span>(<span class='no'>stack</span>, <span class='no'>object</span>, <span class='no'>slot</span>, <span class='kw'>save</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>update.stack</span>(<span class='no'>stack</span>, <span class='no'>objects</span>, <span class='no'>slots</span>, <span class='kw'>save</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -113,12 +113,12 @@
       <td><p>A jenga stack as created by <code>create.slot</code></p></td>
     </tr>
     <tr>
-      <th>object</th>
-      <td><p>An object to be inserted into the jenga stack</p></td>
+      <th>objects</th>
+      <td><p>a list of items to be inserted into the jenga stack</p></td>
     </tr>
     <tr>
-      <th>updatedSlot</th>
-      <td><p>a character input, of the slot to be updated. Must match slots already in the stack.</p></td>
+      <th>slots</th>
+      <td><p>a vector of character inputs, of the slot/s to be updated. Must match slots already in the stack. Order of slots corresponds to order of objects</p></td>
     </tr>
     <tr>
       <th>SAVE</th>

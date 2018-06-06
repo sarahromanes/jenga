@@ -4,14 +4,14 @@
 \alias{update.stack}
 \title{Update a slot of your jenga stack}
 \usage{
-update.stack(stack, object, slot, save = TRUE)
+update.stack(stack, objects, slots, save = TRUE)
 }
 \arguments{
 \item{stack}{A jenga stack as created by \code{create.slot}}
 
-\item{object}{An object to be inserted into the jenga stack}
+\item{objects}{a list of items to be inserted into the jenga stack}
 
-\item{updatedSlot}{a character input, of the slot to be updated. Must match slots already in the stack.}
+\item{slots}{a vector of character inputs, of the slot/s to be updated. Must match slots already in the stack. Order of slots corresponds to order of objects}
 
 \item{SAVE}{if \code{SAVE=TRUE}, then the updated slot will be saved to disk in an .RData file of the name of the stack.}
 }
