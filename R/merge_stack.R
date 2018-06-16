@@ -8,11 +8,13 @@
 
 
 
-merge.stack <- function(stack1, stack2){
+merge_stack <- function(stack1, stack2){
 
   nameSlot1 <- deparse(substitute(stack1))
   nameSlot2 <- deparse(substitute(stack2))
 
   newList <- list(stack1, stack2)
   names(newList) <- c(nameSlot1, nameSlot2)
+
+  return(newList)
 }

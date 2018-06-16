@@ -5,7 +5,7 @@
 #' @export
 
 
-status.stack <- function(stack){
+status_stack <- function(stack){
 
   empty  <- names(which(lapply(stack,length)==0))
   filled <- names(which(lapply(stack,length)!=0))

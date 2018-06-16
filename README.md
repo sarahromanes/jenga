@@ -6,9 +6,7 @@ Save .RData files in an efficient jenga stack.
 Overview
 --------
 
-**jenga** is a small, easy to use package, which allows users to create a "jenga stack" - that is, a named list to be 
-
-
+**jenga** is a small, easy to use package, which allows users to create a "jenga stack" - that is, a named list which can easily updated and saved to memory! **This package is still under active development so any suggestions are welcome!** Work is being done to improve how the RData file saves/overwrites on disk, and also work is being done on the `merge_stack` functions.
 
 Installation
 --------
@@ -21,34 +19,23 @@ devtools::install_github("sarahromanes/jenga")
 ```
 
 
+
+Motivation
+---------
+
+I motivate its usefulness by describing a scenario which occured whilst developing simulations for my [**multiDA**]("https://github.com/sarahromanes/multiDA") paper. Quite often I run my simulations on a high performance computing system to run the algorithm seamlessly over many cores. However, any glitch in the internet connection over wifi results in my session being cancelled. As such, I had many simulation results saved to disk as soon as they had completed running:
+
+<img src="man/figures/manyRData.png" align="center"  height="400"/>
+
+Frustrated that I had to save many RData files, I developed *jenga* - a package that allowed me to update a single list in R, **and save the list on command to the same file name** - hence reducing the number of RData files in my directory. The concept is simple, the list is now a "jenga stack", with slots that can be updated on command. By default, every update to the stack will save the file to disk to the name of the stack. The jenga package has functionality to *create*, *update*, *merge*, *extend* and check on the *status* of such stacks.
+
+
+
+
 Usage
 -----
 
-We can initialise a jenga stack as follows:
-
-```r
-slots    <- c("Sim 1", "Sim 2", "Sim 3")
-my.jenga <- create.stack(slots)
-```
-We can then examine the status of our stack by calling ```status.stack```:
-
-```r
-status.stack(my.jenga)
-```
-
-Returning:
-
-```r
-All slots are empty!
-```
-
-It is easy to update a slot using jenga. Using ```update.stack```, we simultaneously update the jenga stack in the global environment, and by default, save the file to disk with the file name the name of the jenga stack. 
-
-```r
-new.data <- c(1,2,3)
-update.stack(my.jenga, object = new.data, slot = "Sim 1")
-```
-
+See the vignette for a detailed guide on how to use jenga! 
 
 ## Authors
 

@@ -1,0 +1,90 @@
+---
+title: "jenga: a vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  \usepackage[utf8]{inputenc}
+  %\VignetteIndexEntry{jenga: a vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+
+# Help workflow with a jenga stack
+
+Great, you've decided to look into jenga! Although we won't be playing a game, we can still have fun by making RData files a little easier to work with. Here is a typical example in which you may want to use a jenga stack.
+
+## 1) Setting up a jenga stack
+
+```{r}
+library(jenga)
+methods <- c("Method 1", "Method 2", "Method 3")
+sims.1 <- create_stack(methods)
+```
+
+
+## 2) Looking at the status of your jenga stack
+
+```{r}
+status_stack(sims.1)
+```
+
+
+We can see that all slots are empty! Lets add some data to the slot. The default is to *save* the jenga stack to an RData file with the name of the stack. If you don't want to save it, but rather only commit to memory, set `save=FALSE`.
+
+## 3) Updating your jenga stack
+
+```{r}
+res <-  c(1,2,3,4,5,6)
+
+update_stack(stack=sims.1, objects = res, slots = "Method 1", save=FALSE)
+```
+
+We can now check on the status of our jenga stack again:
+
+```{r}
+status_stack(sims.1)
+```
+
+We can also update more than one slot at a time. Suppose we now have data for Methods 2 and 3. We can combine the results into a list and update 2 slots at once.
+
+```{r}
+res2 <- c(2,3,4,5,6,7)
+res3 <- c(3,4,5,6,7,8)
+
+res <- list(res2,res3)
+
+update_stack(stack=sims.1, objects = res, slots =c("Method 2", "Method 3"), save=FALSE)
+```
+
+If we check the status of the stack again, we will see now that it is all filled!
+
+```{r}
+status_stack(sims.1)
+```
+
+## 4) Extending your jenga stack
+
+Say now that you want to extend the stack to hold a fourth method for your simulation study. We can easily add another slot using the `extend_stack` function.
+
+```{r}
+new.method <- "Method 4"
+extend_stack(stack=sims.1, new.slot = new.method )
+
+status_stack(sims.1)
+```
+
+
+## 5) Merging jenga stacks (under development)
+
+If you want to merge jenga stacks, then we can use the `merge_stack` function to make this easy.
+
+```{r, echo=FALSE}
+sims.2 <- lapply(sims.1, function(x) x[1:3])
+sims.2 <- sims.2[1:2]
+names(sims.2) <- c("Method 2-1", "Method 2-2")
+```
+
+```{r}
+new.stack <- merge_stack(sims.1, sims.2)
+```
+
+

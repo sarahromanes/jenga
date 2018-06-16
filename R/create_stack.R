@@ -5,9 +5,9 @@
 #' @export
 #' @examples
 #'
-#' my.stack <- create.stack(c("Variable 1", "Variable 2", "Variable 3"))
+#' my.stack <- create_stack(c("Variable 1", "Variable 2", "Variable 3"))
 
-create.stack <- function(slot.names){
+create_stack <- function(slot.names){
 
   stack <- vector("list", length(slot.names))
   names(stack) <- slot.names

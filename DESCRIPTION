@@ -11,4 +11,6 @@ RoxygenNote: 6.0.1
 Imports:
     crayon,
     cli
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
 

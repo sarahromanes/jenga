@@ -9,7 +9,7 @@
 
 
 
-update.stack <- function(stack, objects, slots, save=TRUE){
+update_stack <- function(stack, objects, slots, save=TRUE){
 
   inds <- which(names(stack)%in%slots)
 
@@ -22,7 +22,15 @@ update.stack <- function(stack, objects, slots, save=TRUE){
 
   else{
 
-    stack[inds] <-  objects
+    if(length(inds)==1){
+      stack[[inds]] <-  objects
+    }
+
+    else{
+      stack[inds] <-  objects
+    }
+
+
     assign(nameSlot, stack, envir=.GlobalEnv)
 
     #cat(paste("Jenga stack",nameSlot,"has been updated for slot", slot))

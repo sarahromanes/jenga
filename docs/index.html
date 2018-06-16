@@ -44,6 +44,18 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/jengavignette.html">jenga: a vignette</a>
+    </li>
+  </ul>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right"></ul>
 </div>
@@ -64,7 +76,7 @@
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h2>
-<p><strong>jenga</strong> is a small, easy to use package, which allows users to create a “jenga stack” - that is, a named list to be</p>
+<p><strong>jenga</strong> is a small, easy to use package, which allows users to create a “jenga stack” - that is, a named list which can easily updated and saved to memory! <strong>This package is still under active development so any suggestions are welcome!</strong> Work is being done to improve how the RData file saves/overwrites on disk, and also work is being done on the <code>merge_stack</code> functions.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -73,19 +85,17 @@
 <span class="co"># install.packages("devtools")</span>
 devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"sarahromanes/jenga"</span>)</code></pre></div>
 </div>
+<div id="motivation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#motivation" class="anchor"></a>Motivation</h2>
+<p>I motivate its usefulness by describing a scenario which occured whilst developing simulations for my <a href="%22https://github.com/sarahromanes/multiDA%22"><strong>multiDA</strong></a> paper. Quite often I run my simulations on a high performance computing system to run the algorithm seamlessly over many cores. However, any glitch in the internet connection over wifi results in my session being cancelled. As such, I had many simulation results saved to disk as soon as they had completed running:</p>
+<p><img src="reference/figures/manyRData.png" align="center" height="400"></p>
+<p>Frustrated that I had to save many RData files, I developed <em>jenga</em> - a package that allowed me to update a single list in R, <strong>and save the list on command to the same file name</strong> - hence reducing the number of RData files in my directory. The concept is simple, the list is now a “jenga stack”, with slots that can be updated on command. By default, every update to the stack will save the file to disk to the name of the stack. The jenga package has functionality to <em>create</em>, <em>update</em>, <em>merge</em>, <em>extend</em> and check on the <em>status</em> of such stacks.</p>
+</div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>We can initialise a jenga stack as follows:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">slots    &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Sim 1"</span>, <span class="st">"Sim 2"</span>, <span class="st">"Sim 3"</span>)
-my.jenga &lt;-<span class="st"> </span><span class="kw"><a href="reference/create.stack.html">create.stack</a></span>(slots)</code></pre></div>
-<p>We can then examine the status of our stack by calling <code>status.stack</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/status.stack.html">status.stack</a></span>(my.jenga)</code></pre></div>
-<p>Returning:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">All slots are empty<span class="op">!</span></code></pre></div>
-<p>It is easy to update a slot using jenga. Using <code>update.stack</code>, we simultaneously update the jenga stack in the global environment, and by default, save the file to disk with the file name the name of the jenga stack.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">new.data &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)
-<span class="kw"><a href="reference/update.stack.html">update.stack</a></span>(my.jenga, <span class="dt">object =</span> new.data, <span class="dt">slot =</span> <span class="st">"Sim 1"</span>)</code></pre></div>
+<p>See the vignette for a detailed guide on how to use jenga!</p>
 </div>
 <div id="authors" class="section level2">
 <h2 class="hasAnchor">
