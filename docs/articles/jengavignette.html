@@ -111,9 +111,9 @@ sims.<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw"><a
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/status_stack.html">status_stack</a></span>(sims.<span class="dv">1</span>)</code></pre></div>
 <pre><code>## 
 ## Total of 1 slots filled out of 3 total slots</code></pre>
-<pre><code>## -- Filled Slots -------------------------------------------------------------------------------------------------------------------------------------------------------------</code></pre>
+<pre><code>## -- Filled Slots --------------------------------------------------------------------------------------------------------------------------------------------------</code></pre>
 <pre><code>## v Method 1</code></pre>
-<pre><code>## -- Empty Slots --------------------------------------------------------------------------------------------------------------------------------------------------------------</code></pre>
+<pre><code>## -- Empty Slots ---------------------------------------------------------------------------------------------------------------------------------------------------</code></pre>
 <pre><code>## x Method 2     x Method 3</code></pre>
 <p>We can also update more than one slot at a time. Suppose we now have data for Methods 2 and 3. We can combine the results into a list and update 2 slots at once.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)
@@ -140,10 +140,10 @@ res &lt;-<span class="st"> </span><span class="kw">list</span>(res2,res3)
 <span class="kw"><a href="../reference/status_stack.html">status_stack</a></span>(sims.<span class="dv">1</span>)</code></pre></div>
 <pre><code>## 
 ## Total of 3 slots filled out of 4 total slots</code></pre>
-<pre><code>## -- Filled Slots -------------------------------------------------------------------------------------------------------------------------------------------------------------</code></pre>
+<pre><code>## -- Filled Slots --------------------------------------------------------------------------------------------------------------------------------------------------</code></pre>
 <pre><code>## v Method 1     v Method 3
 ## v Method 2</code></pre>
-<pre><code>## -- Empty Slots --------------------------------------------------------------------------------------------------------------------------------------------------------------</code></pre>
+<pre><code>## -- Empty Slots ---------------------------------------------------------------------------------------------------------------------------------------------------</code></pre>
 <pre><code>## x Method 4</code></pre>
 </div>
 <div id="merging-jenga-stacks-under-development" class="section level2">
