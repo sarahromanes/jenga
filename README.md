@@ -6,7 +6,7 @@ Save .RData files in an efficient jenga stack.
 Overview
 --------
 
-**jenga** is a small, easy to use package, which allows users to create a "jenga stack" - that is, a named list which can easily updated and saved to memory! **This package is still under active development so any suggestions are welcome!** Work is being done to improve how the RData file saves/overwrites on disk, and also work is being done on the `merge_stack` functions.
+**jenga** is a small, easy to use package, which allows users to create a "jenga stack" - that is, a named list which can easily updated and saved to memory! **This package is still under active development so any suggestions are welcome!** Work is being done to improve how the RData file saves/overwrites on disk, and also work is being done on the `merge_stack` functions. :construction:
 
 Installation
 --------
