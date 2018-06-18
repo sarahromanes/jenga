@@ -25,7 +25,7 @@ Motivation
 
 I motivate its usefulness by describing a scenario which occured whilst developing simulations for my [**multiDA**]("https://github.com/sarahromanes/multiDA") paper. Quite often I run my simulations on a high performance computing system to run the algorithm seamlessly over many cores. However, any glitch in the internet connection over wifi results in my session being cancelled. As such, I had many simulation results saved to disk as soon as they had completed running:
 
-<img src="man/figures/manyRData.jpg" align="center"  height="400"/>
+<img src="man/figures/moti.jpg" align="center"  height="400"/>
 
 Frustrated that I had to save many RData files, I developed *jenga* - a package that allowed me to update a single list in R, **and save the list on command to the same file name** - hence reducing the number of RData files in my directory. The concept is simple, the list is now a "jenga stack", with slots that can be updated on command. By default, every update to the stack will save the file to disk to the name of the stack. The jenga package has functionality to *create*, *update*, *merge*, *extend* and check on the *status* of such stacks.
 
